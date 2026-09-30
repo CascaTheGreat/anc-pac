@@ -3,24 +3,23 @@ import { EXAMPLE_PATH } from "@/lib/constants";
 
 export function Footer() {
   return (
-    <footer className="bg-neutral-50 border-t border-neutral-200 dark:bg-slate-800">
+    <footer className="border-t-4 border-secondary bg-primary text-background">
       <Container>
-        <div className="py-28 flex flex-col lg:flex-row items-center">
-          <h3 className="text-4xl lg:text-[2.5rem] font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Statically Generated with Next.js.
-          </h3>
-          <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
+        <div className="flex flex-col items-start justify-between gap-10 py-14 lg:flex-row">
+          <div className="lg:w-1/2">
+            <p className="mb-5 font-sans text-2xl font-bold uppercase leading-none tracking-tight text-secondary">
+              Stronger together.
+            </p>
+            <div className="border-l-4 border-secondary pl-4 font-sans text-sm">
+              <p>© 2026 Americans For Neighborhood Cohesion</p>
+            </div>
+          </div>
+          <div className="font-sans text-sm font-bold uppercase tracking-widest lg:pt-1">
             <a
-              href="https://nextjs.org/docs/app/building-your-application/routing/layouts-and-templates"
-              className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
+              href="/privacy-policy"
+              className="underline decoration-secondary decoration-2 hover:text-secondary"
             >
-              Read Documentation
-            </a>
-            <a
-              href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
-              className="mx-3 font-bold hover:underline"
-            >
-              View on GitHub
+              Privacy Policy
             </a>
           </div>
         </div>
