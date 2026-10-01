@@ -4,7 +4,7 @@ import Container from "@/app/_components/container";
 const endorsements = [
   {
     id: 1,
-    image: "/assets/endorsements/zohran.png",
+    image: "",
     alt: "Jack Hill endorsement",
     name: `Jack Hill`,
     race: "SMD Seat 2E 08",
@@ -16,11 +16,11 @@ export default function EndorsementsPage() {
   return (
     <main className="py-12 md:py-20">
       <Container>
-        <div className="mx-auto max-w-6xl px-5">
+        <div className="mx-auto max-w-6xl">
           <h1 className="mb-10 text-5xl text-primary md:text-7xl">
             Endorsements
           </h1>
-          <div className="grid grid-cols-3 gap-3 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
             {endorsements.map((endorsement) => (
               <div
                 key={endorsement.id}

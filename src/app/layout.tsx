@@ -1,8 +1,8 @@
 import Footer from "@/app/_components/footer";
-import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
+import { HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import { Lora } from "next/font/google";
-import { ThemeSwitcher } from "./_components/theme-switcher";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import Header from "./_components/header";
 
 import "./globals.css";
@@ -65,6 +65,7 @@ export default function RootLayout({
         </div>
         <Footer />
       </body>
+      <GoogleAnalytics gaId="G-6S2JXNRMXL" />
     </html>
   );
 }

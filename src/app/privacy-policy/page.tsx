@@ -4,7 +4,7 @@ export default function PrivacyPolicyPage() {
   return (
     <main className="py-12 md:py-20">
       <Container>
-        <div className="mx-auto max-w-3xl px-5">
+        <div className="mx-auto max-w-3xl">
           <h1 className="mb-8 text-5xl text-primary md:text-7xl">
             Privacy Policy
           </h1>

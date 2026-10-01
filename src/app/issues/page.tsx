@@ -33,7 +33,7 @@ export default function IssuesPage() {
   return (
     <main className="py-12 md:py-20">
       <Container>
-        <div className="mx-auto max-w-6xl px-5">
+        <div className="mx-auto max-w-6xl">
           <h1 className="mb-10 text-5xl text-primary md:text-7xl">Issues</h1>
         </div>
         <div className="grid grid-cols-1 max-w-6xl mx-auto">

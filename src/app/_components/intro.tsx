@@ -3,19 +3,22 @@ import ANCLogo from "@/app/_components/logo";
 export function Intro() {
   return (
     <section className="md:py-2 py-2">
-      <div data-home-logo className="flex items-center justify-center mb-4">
-        <ANCLogo height={125} width={300} />
+      <div data-home-logo className="flex items-center justify-center">
+        <ANCLogo height={115} width={200} />
       </div>
       <div
         className="grid gap-12 md:grid-cols-2 md:items-center md:gap-x-16 lg:gap-x-24"
         id="intro"
       >
-        <div className="relative flex min-h-[28rem] items-center justify-center overflow-hidden md:min-h-[38rem]">
+        <div className="relative flex h-[20rem] items-center justify-center sm:h-[24rem] md:h-auto md:min-h-[38rem]">
           <img
-            src="https://cdn.britannica.com/33/132433-050-AA78347C/Healy-Hall-Georgetown-University-Washington-DC.jpg"
-            alt="The Golden Gate Bridge in San Francisco"
-            className="relative z-10 h-full w-full object-contain"
+            src="/assets/students.png"
+            alt="Students Walking"
+            className="relative z-10 max-h-full max-w-full object-contain"
           />
+          <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 bg-secondary transform rotate-6 h-[200px] m-auto"></div>
+          </div>
         </div>
         <div className="mt-4">
           <h1 className="max-w-xl text-4xl leading-[0.98] tracking-tight text-primary md:text-5xl lg:text-6xl">

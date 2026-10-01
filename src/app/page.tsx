@@ -14,7 +14,7 @@ export default function Index() {
 
   return (
     <main>
-      <div className=" md:py-8 mb-8">
+      <div className=" md:py-8 mb-8 w-full">
         <Container>
           <Intro />
         </Container>
@@ -24,7 +24,7 @@ export default function Index() {
           <QouteSection />
         </Container>
       </div>
-      <div className="py-16">
+      <div className="pt-4 md:py-16">
         <Container>
           <HeroPost
             title={heroPost.title}
@@ -36,7 +36,7 @@ export default function Index() {
           />
         </Container>
       </div>
-      <div className="bg-primary py-16 text-background">
+      <div className="bg-primary md:py-16 py-8 text-background">
         <Container>
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
         </Container>
