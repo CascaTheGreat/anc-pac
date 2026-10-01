@@ -1,19 +1,29 @@
 ---
-title: "Preview Mode for Static Generation"
-excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
+title: "Georgetown Wants Your Consent, and Your Class Schedule is the Leverage"
+excerpt: "Georgetown prides itself on cura personalis, care for the whole person. It is hard to square that ideal with a University that tells students to consent to being tracked by their license plates or risk losing the ability to register for classes."
 coverImage: "/assets/blog/preview/cover.jpg"
-date: "2020-03-16T05:35:07.322Z"
+date: "2026-09-24T05:35:07.322Z"
 author:
-  name: Joe Haddad
-  picture: "/assets/blog/authors/joe.jpeg"
+  name: ANC Editors
+  picture: "/assets/blog/authors/anc.png"
 ogImage:
   url: "/assets/blog/preview/cover.jpg"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+Georgetown prides itself on cura personalis, care for the whole person. It is hard to square that ideal with a University that tells students to consent to being tracked by their license plates or risk losing the ability to register for classes.
 
-Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
+Here is how the program works. Georgetown scans license plates and checks them against a database of students' known names and addresses. Students are not asked to register their vehicles for a parking permit or any other service they requested. Instead, the University demands consent to have their plates matched to their identities, and it backs that demand with a threat: withhold consent and your registration is in jeopardy.
 
-## Lorem Ipsum
+That is not consent. Consent means being able to say no without penalty. Course registration is how we earn the degrees we pay tens of thousands of dollars a year for, and holding it hostage turns a signature into a surrender. There is no possibility for real consent.
 
-Tristique senectus et netus et malesuada fames ac turpis. Ridiculous mus mauris vitae ultricies leo integer malesuada nunc vel. In mollis nunc sed id semper. Egestas tellus rutrum tellus pellentesque. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Eros donec ac odio tempor orci dapibus ultrices. Aliquam sem et tortor consequat id porta nibh. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla. Diam vulputate ut pharetra sit amet. Ut tellus elementum sagittis vitae et leo. Arcu non odio euismod lacinia at quis risus sed vulputate.
+The consequences of that signature are what should worry us most. Under the program, a license plate hit can trigger a seemingly automatic referral to the Office of Student Conduct, including for alleged violations that happen off campus. A plate spotted anywhere in the surrounding neighborhoods, even if only parked for a moment, can start a disciplinary process with the University as investigator and judge. Students have not been told where the University's authority is supposed to end.
+
+Consider what "automatic" means here. A referral that follows mechanically from a plate match leaves little room for context. A license plate identifies a car, not a driver. Students lend vehicles to roommates and friends, share rides, and park in neighborhoods crowded with other cars. A scanner can misread a plate, and a database of names and addresses can be out of date. When a flawed match is the trigger for a conduct case, the burden falls on the student to prove they were not involved, with a transcript, a housing record, and sometimes a future career on the line.
+
+Off-campus conduct is also a fraught area to begin with. D.C. has its own police and its own courts, and they exist for a reason. When the University uses surveillance technology to extend its disciplinary reach into students' private lives, it blurs a line that has long protected young adults. Behavior that is lawful or already handled by the proper authorities can still become a University matter, with sanctions of its own and no clear standard for when the University decides to act.
+
+Nor have students been given meaningful answers about the basics. Who reviews a plate hit before a referral is made? How long does the University keep the data? Can a student see what was recorded about them, or challenge an error? Without answers, the program offers all of the risk of surveillance and none of the accountability.
+
+Georgetown must change course. Gurantee due process and human review of all citations, not the kangaroo court comprised by the Office of Student Conduct. Most importantly, stop cooercing students. It is ridiculous to send repeated threatening emails and demand cooperation with a massive invasion of student (and neighborhood resident) privacy.
+
+If Georgetown believes in this program, it should be willing to ask for our consent honestly, which means being willing to hear us say no.

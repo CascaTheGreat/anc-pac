@@ -35,9 +35,7 @@ function IssueCard({ issue }: { issue: Issue }) {
       </div>
       {isExpanded && (
         <div className="issue-body-reveal p-6 pt-0 px-8">
-          <p className="max-w-prose text-base leading-relaxed text-text">
-            {issue.content}
-          </p>
+          <p className="max-w-full leading-relaxed text-xl">{issue.content}</p>
         </div>
       )}
     </div>

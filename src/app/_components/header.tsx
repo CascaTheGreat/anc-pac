@@ -71,7 +71,16 @@ const Header = () => {
             Endorsements
           </a>
         </nav>
-        <div className="ml-auto">
+        <div className="ml-auto flex flex-row items-center gap-x-4">
+          <a
+            href="https://vr.dcboe.org/213324797239968?agency_code=12"
+            className="text-sm font-bold uppercase tracking-wide text-secondary transition-colors hover:text-accent"
+            style={{ fontFamily: '"parisplus-std", sans-serif' }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Register Today
+          </a>
           <a
             href="#stories"
             className="flex h-12 min-w-[132px] items-center justify-center rounded-full bg-secondary px-5 py-1 text-background hover:brightness-95"
