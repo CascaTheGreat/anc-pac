@@ -22,15 +22,15 @@ const Header = () => {
       return;
     }
 
-    setShowLogo(false);
+    const showLogoAt = homeLogo.getBoundingClientRect().bottom + window.scrollY;
+    const updateLogoVisibility = () => {
+      setShowLogo(window.scrollY >= showLogoAt);
+    };
 
-    const observer = new IntersectionObserver(([entry]) => {
-      setShowLogo(!entry.isIntersecting);
-    });
+    updateLogoVisibility();
+    window.addEventListener("scroll", updateLogoVisibility, { passive: true });
 
-    observer.observe(homeLogo);
-
-    return () => observer.disconnect();
+    return () => window.removeEventListener("scroll", updateLogoVisibility);
   }, [isHomePage]);
 
   return (
@@ -40,7 +40,7 @@ const Header = () => {
           href="/"
           aria-label="Americans for Neighborhood Cohesion home"
           aria-hidden={!showLogo}
-          className={`order-first basis-full text-center transition-opacity duration-200 md:absolute md:left-1/2 md:top-1/2 md:order-none md:basis-auto md:-translate-x-1/2 md:-translate-y-1/2 ${showLogo ? "opacity-100" : "pointer-events-none opacity-0"}`}
+          className={`order-first flex basis-full justify-center transition-opacity duration-200 md:absolute md:left-1/2 md:top-1/2 md:order-none md:basis-auto md:-translate-x-1/2 md:-translate-y-1/2 ${showLogo ? "opacity-100" : "pointer-events-none hidden opacity-0"}`}
           style={{ fontFamily: '"parisplus-std", sans-serif' }}
         >
           <ANCLogo aria-hidden="true" className="h-10 w-auto sm:h-12" />

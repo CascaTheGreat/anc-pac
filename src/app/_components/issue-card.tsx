@@ -10,7 +10,7 @@ function IssueCard({ issue }: { issue: Issue }) {
   const [isExpanded, setIsExpanded] = useState(false);
   return (
     <div className="group flex flex-col justify-end overflow-hidden transition-transform duration-200">
-      <div className="flex w-full flex-row items-center justify-between border-t-4 border-secondary bg-background p-6 sm:p-8">
+      <div className="flex w-full flex-row items-center justify-between border-t-4 border-secondary bg-background px-0 py-6 md:px-6">
         <div>
           <h2 className="mb-3 text-3xl leading-none text-primary sm:text-4xl">
             {issue.name}
@@ -34,7 +34,7 @@ function IssueCard({ issue }: { issue: Issue }) {
         </button>
       </div>
       {isExpanded && (
-        <div className="issue-body-reveal p-6 pt-0 px-8">
+        <div className="issue-body-reveal px-0 pb-4 md:px-6 md:pb-6 pt-0">
           <p className="max-w-full leading-relaxed text-xl">{issue.content}</p>
         </div>
       )}
