@@ -1,3 +1,4 @@
+import Image from "next/image";
 export function QouteSection() {
   return (
     <section id="qoute">
@@ -7,7 +8,8 @@ export function QouteSection() {
           Students must work together to build a campus that works for everyone.
           <span className="text-secondary"> ”</span>
         </h1>
-        <iframe
+        <Image src="/assets/protest.jpg" alt="Quote" width={500} height={300} />
+        {/*<iframe
           width="672"
           height="378"
           src="https://www.youtube.com/embed/FnHMY0wTnLE"
@@ -17,7 +19,7 @@ export function QouteSection() {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
-        ></iframe>
+        ></iframe>*/}
       </div>
     </section>
   );

@@ -31,7 +31,7 @@ export function PostPreview({
           {title}
         </Link>
       </h3>
-      <div className="mb-4 font-sans text-sm font-bold uppercase tracking-wider text-secondary">
+      <div className="mb-4 text-sm font-bold uppercase tracking-wider text-secondary">
         <DateFormatter dateString={date} />
       </div>
       <p className="mb-4 text-lg leading-relaxed">{excerpt}</p>
