@@ -8,6 +8,7 @@ const Header = () => {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
   const [showLogo, setShowLogo] = useState(!isHomePage);
+  const donationLink = process.env.NEXT_PUBLIC_DONATION_LINK;
 
   useEffect(() => {
     if (!isHomePage) {
@@ -81,15 +82,17 @@ const Header = () => {
           >
             Register Today
           </a>
-          <a
-            href="#stories"
-            className="flex h-10 min-w-[104px] items-center justify-center rounded-full bg-secondary px-3 py-1 text-background hover:brightness-95 sm:h-12 sm:min-w-[132px] sm:px-5"
-            style={{ fontFamily: '"parisplus-std", sans-serif' }}
-          >
-            <span className="text-sm font-bold uppercase leading-none tracking-wide">
-              DONATE
-            </span>
-          </a>
+          {donationLink && (
+            <a
+              href={donationLink}
+              className="flex h-10 min-w-[104px] items-center justify-center rounded-full bg-secondary px-3 py-1 text-background hover:brightness-95 sm:h-12 sm:min-w-[132px] sm:px-5"
+              style={{ fontFamily: '"parisplus-std", sans-serif' }}
+            >
+              <span className="text-sm font-bold uppercase leading-none tracking-wide">
+                DONATE
+              </span>
+            </a>
+          )}
         </div>
       </div>
     </header>
