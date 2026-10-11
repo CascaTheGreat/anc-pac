@@ -4,16 +4,22 @@ import { type Issue, IssueCard } from "@/app/_components/issue-card";
 
 const issues: Issue[] = [
   {
-    id: 1,
-    name: "Create a more equitable conduct system.",
+    id: 6,
+    name: "Better Support for Student Renters",
     content:
-      "The student conduct system has increasingly been weaponized to target students and undermine their ability to grow as individuals.",
+      "Students living off campus should not have to navigate confusing systems alone when landlords fail to address serious maintenance or housing problems. We support programs to connect renters with the correct D.C. agencies and existing tenant resources, create clearer information about how to document and report unresolved problems, and use the ANC to follow up on recurring housing concerns affecting Georgetown residents.",
   },
   {
     id: 2,
-    name: "Protect student privacy.",
+    name: "Fair & Transparent Neighborhood Enforcement",
     content:
-      "Georgetown has shown repeated disregard for student privacy. The recent license plate scanning initiative has raised concerns about the collection and use of student data, especially when the University threatents student's ability to register for classes and cooercing consent. Students' personal information should be protected and not used for purposes other than those for which it was collected. Recent data breaches have only further eroded trust in the University's commitment to protecting student information.",
+      "Students should understand the rules they are expected to follow and have confidence that neighborhood enforcement is consistent and transparent. Clearer SNAP reporting procedures, greater transparency around enforcement decisions, and meaningful opportunities for student input should be built into the system to ensure that students are treated fairly and equitably.",
+  },
+  {
+    id: 5,
+    name: "Common-Sense Trash Enforcement",
+    content:
+      "Keeping Georgetown clean matters, but minor mistakes should not automatically result in disproportionate penalties. We support clearer sanitation rules and a warning-first approach to minor, first-time violations while supporting stronger enforcement for repeated or serious problems.",
   },
   {
     id: 3,
@@ -26,6 +32,12 @@ const issues: Issue[] = [
     name: "Create a fair electoral process.",
     content:
       "Students are split between five SMD seats in an effort to dilute their voices. Despite making 45% of the population in the ANC, they often hold less than 25% of the seats. This removes valuable opportunities for students to raise concerns in proper channels and defuse conflicts before they happen. We support redistricting to ensure fair representation, with at least three student majority districts to approach fair representation.",
+  },
+  {
+    id: 1,
+    name: "Create a more equitable conduct system.",
+    content:
+      "The student conduct system has increasingly been weaponized to target students and undermine their ability to grow as individuals.",
   },
 ];
 
