@@ -4,7 +4,7 @@ import Container from "@/app/_components/container";
 const endorsements = [
   {
     id: 1,
-    image: "",
+    image: "/assets/endorsements/jack_hill.png",
     alt: "Jack Hill endorsement",
     name: `Jack Hill`,
     race: "SMD Seat 2E 08",
