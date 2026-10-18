@@ -8,7 +8,22 @@ const endorsements = [
     alt: "Jack Hill endorsement",
     name: `Jack Hill`,
     race: "SMD Seat 2E 08",
-    link: "https://google.com",
+  },
+  {
+    id: 2,
+    image: "/assets/endorsements/jlg.png",
+    alt: "Janeese Lewis George endorsement",
+    name: `Janeese Lewis George`,
+    race: "DC Mayor",
+    link: "https://janeesefordc.com/",
+  },
+  {
+    id: 3,
+    image: "/assets/endorsements/oye.png",
+    alt: "Oye Owolewa Endorsement",
+    name: `Oye Owolewa`,
+    race: "At-Large Councilmember",
+    link: "https://www.vote4oye.com/",
   },
 ];
 
@@ -38,15 +53,17 @@ export default function EndorsementsPage() {
                     {endorsement.name}
                   </h2>
                   <p className="text-sm text-text">{endorsement.race}</p>
-                  <a
-                    href={endorsement.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`View ${endorsement.name} endorsement`}
-                    className="absolute right-4 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-secondary text-2xl leading-none text-background transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2"
-                  >
-                    <span aria-hidden="true">→</span>
-                  </a>
+                  {endorsement.link && (
+                    <a
+                      href={endorsement.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View ${endorsement.name} endorsement`}
+                      className="absolute right-4 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-secondary text-2xl leading-none text-background transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2"
+                    >
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
