@@ -74,13 +74,11 @@ const Header = () => {
         </nav>
         <div className="ml-0 flex basis-full flex-row items-center justify-center gap-x-2 md:ml-auto md:basis-auto md:justify-start md:gap-x-4">
           <a
-            href="https://vr.dcboe.org/213324797239968?agency_code=12"
+            href="/how-to-vote"
             className="text-xs font-bold uppercase tracking-wide text-secondary transition-colors hover:text-accent sm:text-sm"
             style={{ fontFamily: '"parisplus-std", sans-serif' }}
-            target="_blank"
-            rel="noopener noreferrer"
           >
-            Register Today
+            How to Vote
           </a>
           {donationLink && (
             <a

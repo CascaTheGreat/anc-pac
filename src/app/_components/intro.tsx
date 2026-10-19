@@ -24,7 +24,7 @@ export function Intro() {
           <h1 className="max-w-xl text-4xl leading-[0.98] tracking-tight text-primary md:text-5xl lg:text-6xl">
             It's time for Hoyas to start winning local offices.
           </h1>
-          <h2 className="mt-8 text-md leading-none text-primary md:text-2xl">
+          <h2 className="mt-4 text-md leading-none text-primary md:text-2xl">
             Join the fight.
           </h2>
           <form
