@@ -7,7 +7,7 @@ export function Intro() {
         <ANCLogo height={115} width={200} />
       </div>
       <div
-        className="grid gap-12 md:grid-cols-2 md:items-center md:gap-x-16 lg:gap-x-24"
+        className="grid gap-4 md:grid-cols-2 md:items-center md:gap-x-16 lg:gap-x-24"
         id="intro"
       >
         <div className="relative flex h-[20rem] items-center justify-center sm:h-[24rem] md:h-auto md:min-h-[38rem]">
@@ -17,7 +17,7 @@ export function Intro() {
             className="relative z-10 max-h-full max-w-full object-contain"
           />
           <div className="absolute inset-0 z-0">
-            <div className="absolute inset-0 bg-secondary transform rotate-6 h-[200px] m-auto"></div>
+            <div className="absolute inset-0 bg-secondary transform rotate-6 h-[100px] md:h-[200px] m-auto"></div>
           </div>
         </div>
         <div className="mt-4">
@@ -119,7 +119,10 @@ export function Intro() {
                 receive donation asks and informational messages from Americans
                 for Neighborhood Cohesion. Msg &amp; data rates may apply. Msg
                 frequency varies. Unsubscribe at any time by replying STOP.
-                Reply HELP for help. Privacy Policy &amp; Terms.
+                Reply HELP for help.{" "}
+                <a href="/privacy-policy" className="underline">
+                  Privacy Policy
+                </a>
               </span>
             </label>
             <div className="flex justify-end pt-3">

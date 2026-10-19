@@ -11,6 +11,13 @@ const endorsements = [
   },
   {
     id: 2,
+    image: "/assets/endorsements/max_dunn.png",
+    alt: "Max Dunn endorsement",
+    name: `Max Dunn`,
+    race: "SMD Seat 2E 04",
+  },
+  {
+    id: 3,
     image: "/assets/endorsements/jlg.png",
     alt: "Janeese Lewis George endorsement",
     name: `Janeese Lewis George`,
@@ -18,7 +25,7 @@ const endorsements = [
     link: "https://janeesefordc.com/",
   },
   {
-    id: 3,
+    id: 4,
     image: "/assets/endorsements/oye.png",
     alt: "Oye Owolewa Endorsement",
     name: `Oye Owolewa`,
@@ -47,6 +54,7 @@ export default function EndorsementsPage() {
                   fill
                   sizes="(min-width: 768px) 31vw, 33vw"
                   className="object-cover"
+                  loading={endorsement.id <= 3 ? "eager" : "lazy"}
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-background p-5 px-8 border-t-2 border-secondary">
                   <h2 className="text-2xl font-bold text-primary">

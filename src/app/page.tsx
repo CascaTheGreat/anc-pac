@@ -14,7 +14,7 @@ export default function Index() {
 
   return (
     <main>
-      <div className=" md:py-8 mb-8 w-full">
+      <div className="mb-8 w-full">
         <Container>
           <Intro />
         </Container>
