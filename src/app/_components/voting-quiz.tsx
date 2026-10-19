@@ -1,12 +1,20 @@
 "use client";
 
 import { useState } from "react";
+import { sendGAEvent } from "@next/third-parties/google";
 
 type RegistrationStatus = "registered" | "unregistered" | null;
 type MailBallotStatus = "has-ballot" | "no-ballot" | null;
 
 const answerClasses =
   "flex min-h-16 w-full items-center justify-between rounded-lg border-2 border-primary bg-background px-5 py-4 text-left font-sans text-base font-bold text-primary transition hover:-translate-y-0.5 hover:bg-secondary hover:text-text focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-accent";
+
+const trackQuizEvent = (
+  eventName: string,
+  parameters: Record<string, string>,
+) => {
+  sendGAEvent("event", eventName, parameters);
+};
 
 export function VotingQuiz() {
   const [registrationStatus, setRegistrationStatus] =
@@ -21,6 +29,7 @@ export function VotingQuiz() {
   const showMailBallotQuestion = registrationStatus === "registered";
 
   const resetQuiz = () => {
+    trackQuizEvent("voting_quiz_restart", {});
     setRegistrationStatus(null);
     setMailBallotStatus(null);
   };
@@ -28,8 +37,31 @@ export function VotingQuiz() {
   const chooseRegistrationStatus = (
     status: Exclude<RegistrationStatus, null>,
   ) => {
+    trackQuizEvent("voting_quiz_answer", {
+      question: "registration_status",
+      answer: status,
+    });
+    if (status === "unregistered") {
+      trackQuizEvent("voting_quiz_complete", {
+        registration_status: status,
+      });
+    }
     setRegistrationStatus(status);
     setMailBallotStatus(null);
+  };
+
+  const chooseMailBallotStatus = (
+    status: Exclude<MailBallotStatus, null>,
+  ) => {
+    trackQuizEvent("voting_quiz_answer", {
+      question: "mail_ballot_status",
+      answer: status,
+    });
+    trackQuizEvent("voting_quiz_complete", {
+      registration_status: "registered",
+      mail_ballot_status: status,
+    });
+    setMailBallotStatus(status);
   };
 
   const shareQuiz = async () => {
@@ -43,9 +75,11 @@ export function VotingQuiz() {
       if (navigator.share) {
         await navigator.share(shareData);
         setShareMessage("Shared");
+        trackQuizEvent("voting_quiz_share", { method: "native_share" });
       } else {
         await navigator.clipboard.writeText(window.location.href);
         setShareMessage("Link copied");
+        trackQuizEvent("voting_quiz_share", { method: "clipboard" });
       }
     } catch (error) {
       if (error instanceof DOMException && error.name === "AbortError") {
@@ -237,14 +271,14 @@ export function VotingQuiz() {
             <button
               type="button"
               className={`${answerClasses} group`}
-              onClick={() => setMailBallotStatus("has-ballot")}
+              onClick={() => chooseMailBallotStatus("has-ballot")}
             >
               Yes <AnswerMarker />
             </button>
             <button
               type="button"
               className={`${answerClasses} group`}
-              onClick={() => setMailBallotStatus("no-ballot")}
+              onClick={() => chooseMailBallotStatus("no-ballot")}
             >
               No <AnswerMarker />
             </button>
