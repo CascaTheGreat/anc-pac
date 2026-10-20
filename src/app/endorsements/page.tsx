@@ -39,9 +39,9 @@ export default function EndorsementsPage() {
     <main className="py-12 md:py-20">
       <Container>
         <div className="mx-auto max-w-6xl">
-          <h1 className="mb-10 text-5xl text-primary md:text-7xl">
-            Endorsements
-          </h1>
+          <h2 className="mb-10 text-5xl text-primary md:text-5xl">
+            We're proud to endorse the following candidates:
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
             {endorsements.map((endorsement) => (
               <div

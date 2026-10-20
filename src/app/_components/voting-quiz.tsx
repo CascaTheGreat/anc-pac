@@ -7,7 +7,7 @@ type RegistrationStatus = "registered" | "unregistered" | null;
 type MailBallotStatus = "has-ballot" | "no-ballot" | null;
 
 const answerClasses =
-  "flex min-h-16 w-full items-center justify-between rounded-lg border-2 border-primary bg-background px-5 py-4 text-left font-sans text-base font-bold text-primary transition hover:-translate-y-0.5 hover:bg-secondary hover:text-text focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-accent";
+  "flex min-h-16 w-full items-center justify-between rounded-lg border-2 border-primary bg-background px-5 py-4 text-left text-base font-bold text-primary transition hover:-translate-y-0.5 hover:bg-secondary hover:text-text focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-accent";
 
 const trackQuizEvent = (
   eventName: string,
@@ -50,9 +50,7 @@ export function VotingQuiz() {
     setMailBallotStatus(null);
   };
 
-  const chooseMailBallotStatus = (
-    status: Exclude<MailBallotStatus, null>,
-  ) => {
+  const chooseMailBallotStatus = (status: Exclude<MailBallotStatus, null>) => {
     trackQuizEvent("voting_quiz_answer", {
       question: "mail_ballot_status",
       answer: status,
@@ -96,7 +94,7 @@ export function VotingQuiz() {
       aria-hidden="true"
     >
       <span className="absolute h-5 w-5 rounded-full border-2 border-current transition-opacity group-hover:opacity-0 group-focus-visible:opacity-0" />
-      <span className="text-2xl text-primary leading-none opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
+      <span className="text-2xl font-sans text-primary leading-none opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
         ●
       </span>
     </span>
@@ -113,13 +111,13 @@ export function VotingQuiz() {
             id="quiz-results-title"
             className="text-4xl text-primary sm:text-5xl"
           >
-            You&apos;re ready to vote.
+            You&apos;re ready to vote!
           </h2>
           <button
             type="button"
             onClick={shareQuiz}
             aria-label="Share this voting quiz"
-            className="flex shrink-0 items-center gap-2 rounded-full p-2 font-sans text-sm font-bold text-primary transition hover:bg-secondary focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            className="flex shrink-0 items-center gap-2 rounded-full p-2 text-sm font-bold text-primary transition hover:bg-secondary focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-accent"
           >
             <svg
               aria-hidden="true"
@@ -144,7 +142,7 @@ export function VotingQuiz() {
           </button>
         </div>
 
-        <div className="space-y-6 font-sans text-base leading-relaxed text-text sm:text-lg">
+        <div className="space-y-6 text-base leading-relaxed text-text sm:text-lg">
           {mailBallotStatus === "has-ballot" && (
             <div className="rounded-lg border-2 border-accent p-4 sm:p-5">
               <h3 className="mb-2 text-2xl text-primary">
@@ -160,10 +158,10 @@ export function VotingQuiz() {
             <div className="rounded-lg border-2 border-secondary p-4 sm:p-5">
               <h3 className="mb-2 text-2xl text-primary">Not registered?</h3>
               <p>
-                You can register same-day at your polling place. You&apos;ll
-                need to bring proof of your campus address. We recommend a
-                tuition or campus housing statement, bill, or an off-campus
-                lease. If you need help, email{" "}
+                <b>Same-day registration is available.</b> You&apos;ll need to
+                bring proof of your campus address. We recommend a tuition or
+                campus housing statement, bill, or an off-campus lease. If you
+                need help, email{" "}
                 <a
                   className="font-bold text-accent underline"
                   href="mailto:media@anc.fyi"
@@ -178,8 +176,14 @@ export function VotingQuiz() {
           <div>
             <h3 className="mb-2 text-2xl text-primary">Vote early</h3>
             <p>
-              We recommend voting early at <strong>3260 R Street NW</strong>,
-              open <strong>Oct 26 to Nov 1 from 8:30 AM to 7 PM</strong>.
+              We recommend voting early at{" "}
+              <a
+                className="font-bold text-accent underline"
+                href="https://maps.app.goo.gl/pxo3wZCs5BhHW1DJ6"
+              >
+                3260 R Street NW
+              </a>
+              , open <strong>Oct 26 to Nov 1 from 8:30 AM to 7 PM</strong>.
             </p>
           </div>
 
@@ -187,8 +191,21 @@ export function VotingQuiz() {
             <h3 className="mb-2 text-2xl text-primary">Vote on Election Day</h3>
             <p>
               You can also vote on Election Day from <strong>7AM to 8AM</strong>{" "}
-              at <strong>3620 R Street</strong> (20 minute walk) or at{" "}
-              <strong>1819 35th Street NW</strong> (15 minute walk from campus).
+              at{" "}
+              <a
+                className="font-bold text-accent underline"
+                href="https://maps.app.goo.gl/pxo3wZCs5BhHW1DJ6"
+              >
+                3260 R Street NW
+              </a>{" "}
+              (20 minute walk) or at{" "}
+              <a
+                className="font-bold text-accent underline"
+                href="https://maps.app.goo.gl/UFpptd1fCVvnUX8SA"
+              >
+                1819 35th Street NW
+              </a>{" "}
+              (15 minute walk from campus).
             </p>
           </div>
         </div>
@@ -196,7 +213,7 @@ export function VotingQuiz() {
         <button
           type="button"
           onClick={resetQuiz}
-          className="mt-8 rounded-full w-full bg-primary px-6 py-3 font-sans text-sm font-bold uppercase tracking-wide text-background transition hover:bg-secondary focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          className="mt-8 rounded-full w-full bg-primary px-6 py-3 text-sm font-bold uppercase tracking-wide text-background transition hover:bg-secondary focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-accent"
         >
           Start over
         </button>
@@ -223,7 +240,7 @@ export function VotingQuiz() {
           type="button"
           onClick={shareQuiz}
           aria-label="Share this voting quiz"
-          className="flex shrink-0 items-center gap-2 rounded-full p-2 font-sans text-sm font-bold text-primary transition hover:bg-secondary focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          className="flex shrink-0 items-center gap-2 rounded-full p-2 text-sm font-bold text-primary transition hover:bg-secondary focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-accent"
         >
           <svg
             aria-hidden="true"
@@ -285,7 +302,7 @@ export function VotingQuiz() {
             <button
               type="button"
               onClick={resetQuiz}
-              className="mt-2 justify-self-start font-sans text-sm font-bold text-accent underline underline-offset-4 hover:text-primary focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-accent"
+              className="mt-2 justify-self-start text-sm font-bold text-accent underline underline-offset-4 hover:text-primary focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-accent"
             >
               Start over
             </button>
