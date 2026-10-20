@@ -190,8 +190,8 @@ export function VotingQuiz() {
           <div>
             <h3 className="mb-2 text-2xl text-primary">Vote on Election Day</h3>
             <p>
-              You can also vote on Election Day from <strong>7AM to 8AM</strong>{" "}
-              at{" "}
+              You can also vote on <strong>November 3rd</strong> from{" "}
+              <strong>7AM to 8PM</strong> at{" "}
               <a
                 className="font-bold text-accent underline"
                 href="https://maps.app.goo.gl/pxo3wZCs5BhHW1DJ6"
@@ -210,13 +210,28 @@ export function VotingQuiz() {
           </div>
         </div>
 
-        <button
-          type="button"
-          onClick={resetQuiz}
-          className="mt-8 rounded-full w-full bg-primary px-6 py-3 text-sm font-bold uppercase tracking-wide text-background transition hover:bg-secondary focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-accent"
-        >
-          Start over
-        </button>
+        <div className="flex flex-row gap-4">
+          <button
+            type="button"
+            onClick={resetQuiz}
+            className="mt-4 flex w-full items-center justify-center rounded-full border border-primary bg-background px-6 py-3 text-center text-sm font-bold uppercase tracking-wide text-primary transition hover:bg-secondary focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          >
+            Start over
+          </button>
+          <button
+            type="button"
+            onClick={() =>
+              window.open(
+                "https://calendar.google.com/calendar/u/0/r/eventedit?text=%F0%9F%97%B3%EF%B8%8F+Election+Day&dates=20261103T120000Z/20261104T010000Z&details=Get+out+to+vote+today!+&location=1819+35th+St+NW,+Washington,+DC+20007&ctz=America/New_York",
+                "_blank",
+                "noopener,noreferrer",
+              )
+            }
+            className="mt-4 flex w-full items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-bold uppercase tracking-wide text-background transition hover:bg-secondary focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          >
+            Add to calendar
+          </button>
+        </div>
       </section>
     );
   }
