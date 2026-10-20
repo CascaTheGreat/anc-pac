@@ -7,14 +7,14 @@ const endorsements = [
     image: "/assets/endorsements/jack_hill.png",
     alt: "Jack Hill endorsement",
     name: `Jack Hill`,
-    race: "SMD Seat 2E 08",
+    race: "SMD Seat 2E 04",
   },
   {
     id: 2,
     image: "/assets/endorsements/max_dunn.png",
     alt: "Max Dunn endorsement",
     name: `Max Dunn`,
-    race: "SMD Seat 2E 04",
+    race: "SMD Seat 2E 08",
   },
   {
     id: 3,

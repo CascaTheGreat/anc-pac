@@ -214,7 +214,7 @@ export function VotingQuiz() {
           <button
             type="button"
             onClick={resetQuiz}
-            className="mt-4 flex w-full items-center justify-center rounded-full border border-primary bg-background px-6 py-3 text-center text-sm font-bold uppercase tracking-wide text-primary transition hover:bg-secondary focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            className="mt-4 flex w-full items-center justify-center rounded-full border border-primary bg-background px-6 py-3 text-center text-sm font-bold uppercase tracking-wide text-primary transition hover:text-background hover:bg-primary focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-accent"
           >
             Start over
           </button>
