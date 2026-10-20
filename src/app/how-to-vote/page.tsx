@@ -2,7 +2,7 @@ import Container from "@/app/_components/container";
 import { VotingQuiz } from "@/app/_components/voting-quiz";
 
 export const metadata = {
-  title: "How to Vote | Americans for Neighborhood Cohesion",
+  title: "How to Vote | Americans for Neighborhood Change",
   description: "Find your voting plan in a few quick questions.",
 };
 

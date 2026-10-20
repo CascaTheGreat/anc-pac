@@ -117,7 +117,7 @@ export function Intro() {
               <span>
                 By submitting this form and signing up for texts, you consent to
                 receive donation asks and informational messages from Americans
-                for Neighborhood Cohesion. Msg &amp; data rates may apply. Msg
+                for Neighborhood Change. Msg &amp; data rates may apply. Msg
                 frequency varies. Unsubscribe at any time by replying STOP.
                 Reply HELP for help.{" "}
                 <a href="/privacy-policy" className="underline">

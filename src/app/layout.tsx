@@ -10,7 +10,7 @@ import "./globals.css";
 const lora = Lora({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: `Americans for Neighborhood Cohesion`,
+  title: `Americans for Neighborhood Change`,
   description: `Building a better neighborhood for all.`,
   openGraph: {
     images: [HOME_OG_IMAGE_URL],

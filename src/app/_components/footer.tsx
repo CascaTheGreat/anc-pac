@@ -14,7 +14,7 @@ export function Footer() {
               Stronger together.
             </p>
             <div className="border-l-4 border-secondary pl-4 text-sm">
-              <p>© 2026 Americans For Neighborhood Cohesion</p>
+              <p>© 2026 Americans For Neighborhood Change</p>
             </div>
           </div>
           <div className=" text-sm font-bold uppercase tracking-widest lg:pt-1">

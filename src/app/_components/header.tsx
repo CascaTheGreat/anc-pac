@@ -39,7 +39,7 @@ const Header = () => {
       <div className="container relative mx-auto flex min-h-[76px] flex-wrap items-center justify-between gap-x-6 gap-y-3 px-3 py-3 sm:px-5">
         <a
           href="/"
-          aria-label="Americans for Neighborhood Cohesion home"
+          aria-label="Americans for Neighborhood Change home"
           aria-hidden={!showLogo}
           className={`order-first flex basis-full justify-center transition-opacity duration-200 md:absolute md:left-1/2 md:top-1/2 md:order-none md:basis-auto md:-translate-x-1/2 md:-translate-y-1/2 ${showLogo ? "opacity-100" : "pointer-events-none hidden opacity-0"}`}
           style={{ fontFamily: '"parisplus-std", sans-serif' }}
