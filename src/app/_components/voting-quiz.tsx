@@ -261,7 +261,7 @@ export function VotingQuiz() {
                     When registering, <strong>note your dorm building.</strong>{" "}
                     <br />
                     Your address should look like this:{" "}
-                    <strong> ## {dorm.label}, 3700 O St NW, 20057.</strong>
+                    <strong> 123 {dorm.label}, 3700 O St NW, 20057.</strong>
                   </>
                 )}
               </p>
