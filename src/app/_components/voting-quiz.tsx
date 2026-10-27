@@ -5,6 +5,45 @@ import { sendGAEvent } from "@next/third-parties/google";
 
 type RegistrationStatus = "registered" | "unregistered" | null;
 type MailBallotStatus = "has-ballot" | "no-ballot" | null;
+type HousingStatus = "on-campus" | "off-campus" | null;
+
+const dormOptions = [
+  {
+    id: "southwest-quad",
+    label: "Southwest Quad",
+    district: "2E04 - West Campus",
+  },
+  { id: "vil-a", label: "Vil A", district: "2E04 - West Campus" },
+  { id: "new-south", label: "New South", district: "2E04 - West Campus" },
+  { id: "vcw", label: "VCW", district: "2E04 - West Campus" },
+  { id: "vce", label: "VCE", district: "2E08 - East Campus" },
+  { id: "vil-b", label: "Vil B", district: "2E08 - East Campus" },
+  { id: "arrupe", label: "Arrupe", district: "2E08 - East Campus" },
+  {
+    id: "byrnes-hayden-henle",
+    label: "Byrnes, Hayden, or Henle",
+    district: "2E08 - East Campus",
+  },
+  {
+    id: "townhouses-between-37th-and-36th",
+    label: "Townhouses between 37th & 36th St",
+    district: "2E08 - East Campus",
+  },
+  { id: "nevils-lxr", label: "Nevils/LXR", district: "2E05" },
+  { id: "darnall", label: "Darnall", district: "2E02" },
+  { id: "burleith", label: "Burleith", district: "2E01" },
+  {
+    id: "other-georgetown-townhouses",
+    label: "Other Georgetown townhouses",
+    district: "2E03",
+  },
+] as const;
+
+const offCampusDormIds = new Set([
+  "townhouses-between-37th-and-36th",
+  "burleith",
+  "other-georgetown-townhouses",
+]);
 
 const answerClasses =
   "flex min-h-16 w-full items-center justify-between rounded-lg border-2 border-primary bg-background px-5 py-4 text-left text-base font-bold text-primary transition hover:-translate-y-0.5 hover:bg-secondary hover:text-text focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-accent";
@@ -21,17 +60,31 @@ export function VotingQuiz() {
     useState<RegistrationStatus>(null);
   const [mailBallotStatus, setMailBallotStatus] =
     useState<MailBallotStatus>(null);
+  const [housingStatus, setHousingStatus] = useState<HousingStatus>(null);
+  const [dorm, setDorm] = useState<(typeof dormOptions)[number] | null>(null);
   const [shareMessage, setShareMessage] = useState("");
 
   const isComplete =
-    registrationStatus === "unregistered" ||
+    (registrationStatus === "unregistered" && dorm !== null) ||
     (registrationStatus === "registered" && mailBallotStatus !== null);
   const showMailBallotQuestion = registrationStatus === "registered";
+  const showHousingQuestion =
+    registrationStatus === "unregistered" && housingStatus === null;
+  const showDormQuestion =
+    registrationStatus === "unregistered" &&
+    housingStatus !== null &&
+    dorm === null;
+  const visibleDormOptions =
+    housingStatus === "off-campus"
+      ? dormOptions.filter((option) => offCampusDormIds.has(option.id))
+      : dormOptions.filter((option) => !offCampusDormIds.has(option.id));
 
   const resetQuiz = () => {
     trackQuizEvent("voting_quiz_restart", {});
     setRegistrationStatus(null);
     setMailBallotStatus(null);
+    setHousingStatus(null);
+    setDorm(null);
   };
 
   const chooseRegistrationStatus = (
@@ -41,13 +94,32 @@ export function VotingQuiz() {
       question: "registration_status",
       answer: status,
     });
-    if (status === "unregistered") {
-      trackQuizEvent("voting_quiz_complete", {
-        registration_status: status,
-      });
-    }
     setRegistrationStatus(status);
     setMailBallotStatus(null);
+    setHousingStatus(null);
+    setDorm(null);
+  };
+
+  const chooseHousingStatus = (status: Exclude<HousingStatus, null>) => {
+    trackQuizEvent("voting_quiz_answer", {
+      question: "housing_status",
+      answer: status,
+    });
+    setHousingStatus(status);
+    setDorm(null);
+  };
+
+  const chooseDorm = (selectedDorm: (typeof dormOptions)[number]) => {
+    trackQuizEvent("voting_quiz_answer", {
+      question: "dorm",
+      answer: selectedDorm.id,
+    });
+    trackQuizEvent("voting_quiz_complete", {
+      registration_status: "unregistered",
+      dorm: selectedDorm.id,
+      district: selectedDorm.district,
+    });
+    setDorm(selectedDorm);
   };
 
   const chooseMailBallotStatus = (status: Exclude<MailBallotStatus, null>) => {
@@ -156,7 +228,7 @@ export function VotingQuiz() {
           )}
           {registrationStatus === "unregistered" && (
             <div className="rounded-lg border-2 border-secondary p-4 sm:p-5">
-              <h3 className="mb-2 text-2xl text-primary">Not registered?</h3>
+              <h3 className="mb-2 text-2xl text-primary">How to register</h3>
               <p>
                 <b>Same-day registration is available.</b> You&apos;ll need to
                 bring proof of your campus address. We recommend a tuition or
@@ -164,11 +236,34 @@ export function VotingQuiz() {
                 need help, email{" "}
                 <a
                   className="font-bold text-accent underline"
-                  href="mailto:media@anc.fyi"
+                  href="mailto:info@anc.fyi"
                 >
-                  media@anc.fyi
+                  info@anc.fyi
                 </a>
                 .
+              </p>
+            </div>
+          )}
+          {dorm !== null && (
+            <div className="rounded-lg border-2 border-accent p-4 sm:p-5">
+              <h3 className="mb-2 text-2xl text-primary">Your ANC district</h3>
+              <p>
+                Based on your dorm, <strong>{dorm.label}</strong>, you are in
+                ANC District <strong>{dorm.district}</strong>.{" "}
+                {offCampusDormIds.has(dorm.id) ? (
+                  <>
+                    When registering, use your{" "}
+                    <strong>off-campus address</strong> to vote in the correct
+                    district.
+                  </>
+                ) : (
+                  <>
+                    When registering, <strong>note your dorm building.</strong>{" "}
+                    <br />
+                    Your address should look like this:{" "}
+                    <strong> ## {dorm.label}, 3700 O St NW, 20057.</strong>
+                  </>
+                )}
               </p>
             </div>
           )}
@@ -246,9 +341,13 @@ export function VotingQuiz() {
           id="quiz-question-title"
           className="text-3xl leading-tight text-primary sm:text-4xl"
         >
-          {showMailBallotQuestion
-            ? "Do you have a mail-in ballot?"
-            : "Are you registered to vote in DC?"}
+          {showHousingQuestion
+            ? "Do you live on or off campus?"
+            : showDormQuestion
+              ? "Which dorm do you live in?"
+              : showMailBallotQuestion
+                ? "Do you have a mail-in ballot?"
+                : "Are you registered to vote in DC?"}
         </h2>
 
         <button
@@ -281,7 +380,35 @@ export function VotingQuiz() {
       </div>
 
       <div className="grid gap-3">
-        {!showMailBallotQuestion ? (
+        {showHousingQuestion ? (
+          <>
+            <button
+              type="button"
+              className={`${answerClasses} group`}
+              onClick={() => chooseHousingStatus("on-campus")}
+            >
+              On campus <AnswerMarker />
+            </button>
+            <button
+              type="button"
+              className={`${answerClasses} group`}
+              onClick={() => chooseHousingStatus("off-campus")}
+            >
+              Off campus <AnswerMarker />
+            </button>
+          </>
+        ) : showDormQuestion ? (
+          visibleDormOptions.map((option) => (
+            <button
+              key={option.id}
+              type="button"
+              className={`${answerClasses} group`}
+              onClick={() => chooseDorm(option)}
+            >
+              {option.label} <AnswerMarker />
+            </button>
+          ))
+        ) : !showMailBallotQuestion ? (
           <>
             <button
               type="button"
