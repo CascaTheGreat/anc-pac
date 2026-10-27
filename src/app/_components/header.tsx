@@ -71,6 +71,13 @@ const Header = () => {
           >
             Endorsements
           </a>
+          <a
+            href="/faq"
+            className="text-xs font-bold uppercase tracking-wide text-secondary transition-colors hover:text-accent sm:text-sm"
+            style={{ fontFamily: '"parisplus-std", sans-serif' }}
+          >
+            FAQ
+          </a>
         </nav>
         <div className="ml-0 flex basis-full flex-row items-center justify-center gap-x-2 md:ml-auto md:basis-auto md:justify-start md:gap-x-4">
           <a
