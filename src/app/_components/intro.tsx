@@ -13,7 +13,7 @@ export function Intro() {
         <div className="relative flex h-[20rem] items-center justify-center sm:h-[24rem] md:h-auto md:min-h-[38rem]">
           <img
             src="/assets/students.png"
-            alt="Students Walking"
+            alt="Georgetown students walking together"
             className="relative z-10 max-h-full max-w-full object-contain"
           />
           <div className="absolute inset-0 z-0">

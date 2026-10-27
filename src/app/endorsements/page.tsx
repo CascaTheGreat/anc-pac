@@ -1,5 +1,14 @@
 import Image from "next/image";
 import Container from "@/app/_components/container";
+import { LAST_UPDATED, SITE_NAME } from "@/lib/site";
+
+export const metadata = {
+  title:
+    "Endorsements for Georgetown ANC 2E | Americans for Neighborhood Change",
+  description:
+    "See the candidates endorsed by Americans for Neighborhood Change for local and D.C. offices serving Georgetown.",
+  alternates: { canonical: "/endorsements" },
+};
 
 const endorsements = [
   {
@@ -39,9 +48,13 @@ export default function EndorsementsPage() {
     <main className="py-12 md:py-20">
       <Container>
         <div className="mx-auto max-w-6xl">
-          <h2 className="mb-10 text-5xl text-primary md:text-5xl">
-            We're proud to endorse the following candidates:
+          <h2 className="mb-0 text-5xl text-primary md:text-5xl">
+            We're proud to endorse the following candidates
           </h2>
+          <p className="mb-8 text-lg lg:w-2/3 leading-relaxed text-primary">
+            {SITE_NAME} endorses candidates who support fair representation for
+            Georgetown students and neighbors in Washington, D.C.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
             {endorsements.map((endorsement) => (
               <div
@@ -76,6 +89,9 @@ export default function EndorsementsPage() {
               </div>
             ))}
           </div>
+          <p className="mt-8 text-sm text-text/70">
+            Last updated October 27, 2026.
+          </p>
         </div>
       </Container>
     </main>

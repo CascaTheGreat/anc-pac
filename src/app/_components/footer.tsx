@@ -17,13 +17,19 @@ export function Footer() {
               <p>© 2026 Americans For Neighborhood Change</p>
             </div>
           </div>
-          <div className=" text-sm font-bold uppercase tracking-widest lg:pt-1">
+          <div className=" text-sm font-bold uppercase tracking-widest lg:pt-1 flex flex-col items-end">
             <a
               href="/privacy-policy"
               className="underline decoration-secondary decoration-2 hover:text-secondary"
             >
               Privacy Policy
             </a>
+            <br />
+            <p className="mb-4 max-w-xl text-sm leading-relaxed text-background text-end">
+              ANC is a student-led campaign to elect Georgetown students to
+              Advisory Neighborhood Commission seats in Washington, D.C., on
+              November 3, 2026.
+            </p>
           </div>
         </div>
       </Container>

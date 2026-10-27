@@ -51,7 +51,7 @@ const Header = () => {
           className="flex basis-full flex-wrap items-center justify-center gap-x-3 gap-y-2 md:basis-auto md:gap-x-5"
         >
           <a
-            href="/#intro"
+            href="/volunteer"
             className="text-xs font-bold uppercase tracking-wide text-secondary transition-colors hover:text-accent sm:text-sm"
             style={{ fontFamily: '"parisplus-std", sans-serif' }}
           >

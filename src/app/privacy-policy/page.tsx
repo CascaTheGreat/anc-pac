@@ -1,5 +1,11 @@
 import Container from "@/app/_components/container";
 
+export const metadata = {
+  title: "Privacy Policy | Americans for Neighborhood Change",
+  description: "Privacy policy for Americans for Neighborhood Change.",
+  alternates: { canonical: "/privacy-policy" },
+};
+
 export default function PrivacyPolicyPage() {
   return (
     <main className="py-12 md:py-20">

@@ -4,12 +4,14 @@ import type { Metadata } from "next";
 import { Lora } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Header from "./_components/header";
+import { SITE_URL } from "@/lib/site";
 
 import "./globals.css";
 
 const lora = Lora({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: `Americans for Neighborhood Change`,
   description: `Building a better neighborhood for all.`,
   openGraph: {
@@ -49,11 +51,6 @@ export default function RootLayout({
           color="#000000"
         />
         <link rel="shortcut icon" href="/favicon/favicon.ico" />
-        <meta name="msapplication-TileColor" content="#000000" />
-        <meta
-          name="msapplication-config"
-          content="/favicon/browserconfig.xml"
-        />
         <meta name="theme-color" content="#012169" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
         <link rel="stylesheet" href="https://use.typekit.net/qus5dmj.css" />
