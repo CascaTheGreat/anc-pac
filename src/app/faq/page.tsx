@@ -39,8 +39,8 @@ export default function FAQPage() {
           ))}
         </div>
         <p className="mt-4 text-lg text-primary max-w-6xl mx-auto">
-          {SITE_NAME} is a student-led campaign to elect Georgetown students to
-          Advisory Neighborhood Commission seats in Washington, D.C., on
+          {SITE_NAME} is a student-led campaign and to elect Georgetown students
+          to Advisory Neighborhood Commission seats in Washington, D.C., on
           November 3, 2026.
         </p>
       </Container>

@@ -111,6 +111,6 @@ export const faqs: ExpandableContent[] = [
     slug: "what-is-americans-for-neighborhood-change",
     name: "What is Americans for Neighborhood Change?",
     content:
-      "Americans for Neighborhood Change is a student-led campaign to elect Georgetown students to Advisory Neighborhood Commission seats in Washington, D.C., on November 3, 2026. We believe people who live here should have a meaningful say in the decisions that affect their daily lives.",
+      "Americans for Neighborhood Change is a student-led campaign and DC-regsitered local PAC to elect Georgetown students and advocate for student interests. We believe people who live here should have a meaningful say in the decisions that affect their daily lives.",
   },
 ];
