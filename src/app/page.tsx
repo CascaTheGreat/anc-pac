@@ -7,7 +7,7 @@ import { QouteSection } from "@/app/_components/qoute";
 import { ELECTION_DATE, INSTAGRAM_URL, SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata = {
-  title: "Georgetown Student Campaign for ANC 2E | Americans for Neighborhood Change",
+  title: "Americans for Neighborhood Change",
   description:
     "A student-led campaign to elect Georgetown students to Advisory Neighborhood Commission seats in Washington, D.C., on November 3, 2026.",
   alternates: { canonical: "/" },
